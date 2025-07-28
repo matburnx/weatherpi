@@ -37,7 +37,7 @@ int main() {
   pressure = compensatePressure(raw.pressure, &cal, t_fine) / 100; // in hPa
   humidity = compensateHumidity(raw.humidity, &cal, t_fine);       // in percentage 
   current_time = (int) time(NULL); // in sec
-  current_day = current_time / 84600; // 24*60*60
+  current_day = current_time / 86400; // 24*60*60
 
   length = snprintf(NULL, 0, "%d.csv", current_day) + 1;
   file_name = (char *) malloc(sizeof(char)*length);
