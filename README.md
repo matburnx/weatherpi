@@ -15,6 +15,12 @@ Dependencies within npm:
 ```
 npm install http-server chart.js
 ```
+or
+```
+cd website
+
+npm install
+```
 
 ## Usage
 ```
