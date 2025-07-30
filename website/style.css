@@ -1,0 +1,17 @@
+.box {
+  width: auto;
+  height: auto;
+  background-color: blanchedalmond;
+  border: 2px solid bisque;
+  padding: 10px;
+  margin: 10px;
+  float: left;
+}
+
+.chart {
+  width: 1600px;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+  float: none;
+}
