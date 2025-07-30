@@ -65,6 +65,10 @@ function humanTime(value) {
       document.getElementById('firstchart'),
       config
     );
+    
+    document.getElementById('currentTemperature').innerHTML = `${temperatures[temperatures.length-1]}°C`;
+    document.getElementById('currentHumidity').innerHTML = `${humidities[humidities.length-1]} %`;
+    document.getElementById('currentPressure').innerHTML = `${pressures[pressures.length-1]} hPa`;
   } catch (error) {
     console.error('Error before doing chart:', error);
   }

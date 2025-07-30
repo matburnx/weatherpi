@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Weather station data</title>
 </head>
 <body>
-    <div style="width: 800px;"><canvas id="firstchart"></canvas></div>
+    <div class="box" id="currentTemperature"></div>
+    <div class="box" id="currentHumidity"></div>
+    <div class="box" id="currentPressure"></div>
+    <div class="chart"><canvas id="firstchart"></canvas></div>
     <script src="node_modules/chart.js/dist/chart.umd.min.js"></script>
     <script src="chart1.js"></script>
 </body>
