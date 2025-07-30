@@ -22,7 +22,7 @@ int main() {
   int fd = wiringPiI2CSetup(BME280_ADDRESS);
   if(fd < 0) {
     printf("Device not found");
-    return -1;
+    return 1;
   }
 
   readCalibrationData(fd, &cal);
@@ -37,7 +37,7 @@ int main() {
   pressure = compensatePressure(raw.pressure, &cal, t_fine) / 100; // in hPa
   humidity = compensateHumidity(raw.humidity, &cal, t_fine);       // in percentage 
   current_time = (int) time(NULL); // in sec
-  current_day = current_time / 86400; // 24*60*60
+  current_day = current_time / 86400; // 24*60*60 seconds in a day
 
   length = snprintf(NULL, 0, "%d.csv", current_day) + 1;
   file_name = (char *) malloc(sizeof(char)*length);
@@ -46,7 +46,6 @@ int main() {
   output_file = fopen(file_name,"a");
 
   printf("%d,%.2f,%.2f,%.2f\n", current_time, temperature, humidity, pressure);
-  printf("day: %d\n", current_day);
 
   fprintf(output_file,"%d,%.2f,%.2f,%.2f\n", current_time, temperature, humidity, pressure);
 
